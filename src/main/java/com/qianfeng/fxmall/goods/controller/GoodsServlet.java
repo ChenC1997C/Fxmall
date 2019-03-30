@@ -44,10 +44,11 @@ public class GoodsServlet extends BaseServlet {
     /**
      *  商品信息插入
      */
-
+    //jasiodjojasdijaosjdiosajdoisjaoidsjaodijsaoidjaosidjosaijdoias
     public void insertGoodsAndGoodSku(HttpServletRequest req, HttpServletResponse resp){
         String sku_str=req.getParameter("sku_str");
         String ctype=req.getParameter("ctype");
+        String aaa="adasdasdasdsa";
         String sku_title=req.getParameter("sku_title");
         String sku_cost=req.getParameter("sku_cost");
         String sku_pmoney=req.getParameter("sku_pmoney");
@@ -88,47 +89,47 @@ public class GoodsServlet extends BaseServlet {
         WxbGood wxbGood=new WxbGood("12312312","123","123","123","123","123","123","123","123","123","123","123","123","123",1,"123","123",1,timestamp,11,22,timestamp,timestamp,"123","123",123,"123",111,111,111,"222");
 //        WxbGood wxbGood=new WxbGood(good_id,good_name,customer_id,"123",smfile,smfile1,smfile2,sku_title,sku_cost,sku_price,sku_pmoney,copy_id,copy_desc,forward_link,orderNo,type_id,tags[0],1,timestamp,11,22,timestamp,timestamp,"123","123",123,"123",111,111,111,"222");
         goodsService.insertOneGood(wxbGood);
-//        if (ServletFileUpload.isMultipartContent(req)) {
-//            ServletFileUpload upload = new ServletFileUpload();
-//            upload.setFileSizeMax(5 * 1024 * 1024);
-//            try {
-//                FileItemIterator itr = upload.getItemIterator(req);
-//                while (itr.hasNext()) {
-//                    FileItemStream item = itr.next();
-//                    if (item.isFormField()) {
-//                        String value = item.getString();
-//                        switch (item.getFieldName()) {
-//                            case "order_number":
-//                                if (value != null) {
-//                                }
-//                                break;
-//                            case "order_user_id":
-//                                if (value != null) {
-//                                }
-//                                break;
-//                            case "order_car_id":
-//                                if (value != null) {
-//                                }
-//                                break;
-//                            case "order_fee":
-//                                if (value != null) {
-//                                }
-//                                break;
-//                            case "order_pay_type_id":
-//                                if (value != null) {
-//                                }
-//                                break;
-//                            case "order_deposit":
-//                                if (value != null) {
-//                                }
-//                                break;
-//                        }
-//                    }
-//                }
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        }
+        if (ServletFileUpload.isMultipartContent(req)) {
+            ServletFileUpload upload = new ServletFileUpload();
+            upload.setFileSizeMax(5 * 1024 * 1024);
+            try {
+                FileItemIterator itr = upload.getItemIterator(req);
+                while (itr.hasNext()) {
+                    FileItemStream item = itr.next();
+                    if (item.isFormField()) {
+                        String value = "123";
+                        switch (item.getFieldName()) {
+                            case "order_number":
+                                if (value != null) {
+                                }
+                                break;
+                            case "order_user_id":
+                                if (value != null) {
+                                }
+                                break;
+                            case "order_car_id":
+                                if (value != null) {
+                                }
+                                break;
+                            case "order_fee":
+                                if (value != null) {
+                                }
+                                break;
+                            case "order_pay_type_id":
+                                if (value != null) {
+                                }
+                                break;
+                            case "order_deposit":
+                                if (value != null) {
+                                }
+                                break;
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 }
