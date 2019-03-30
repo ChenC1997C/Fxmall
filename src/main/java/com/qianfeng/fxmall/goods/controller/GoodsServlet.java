@@ -44,7 +44,7 @@ public class GoodsServlet extends BaseServlet {
     /**
      *  商品信息插入
      */
-
+    //1231231232132123132
     public void insertGoodsAndGoodSku(HttpServletRequest req, HttpServletResponse resp){
         String sku_str=req.getParameter("sku_str");
         String ctype=req.getParameter("ctype");
