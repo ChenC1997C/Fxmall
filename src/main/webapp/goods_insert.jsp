@@ -457,8 +457,8 @@
                     </h1>
                 </div>
 
-                <form method="post" name="copy_form" id="copy_form" action="http://localhost:8080/fxmall" >
-                    <%--enctype="multipart/form-data"--%>
+                <form method="post" name="copy_form" id="copy_form" action="http://localhost:8080/fxmall" enctype="multipart/form-data" >
+
                     <div class="widget-main">
                         <input type="hidden" id="sku_str" name="sku_str" value="">
                         <input type="hidden" id="ctype" name="ctype" value="custGood">
@@ -474,7 +474,6 @@
                         <input type="hidden" id="optype" name="optype" value="add_good">
                         <input type="hidden" id="iswxpay" name="iswxpay" value="0">
                         <input type="hidden" id="customer_id" name="customer_id" value="69609206">
-
                         <table class="table table-bordered table-striped">
                             <tbody><tr>
                                 <td align="right">
