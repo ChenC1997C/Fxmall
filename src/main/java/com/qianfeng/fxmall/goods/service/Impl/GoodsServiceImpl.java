@@ -24,6 +24,7 @@ public class GoodsServiceImpl implements IGoodsService {
 
     @Override
     public void insertOneGood(WxbGood wxbGood) {
+
         goodsDAO.insertOneGood(wxbGood);
     }
 }

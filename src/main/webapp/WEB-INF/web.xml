@@ -4,4 +4,12 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>Goods</servlet-name>
+    <servlet-class>com.qianfeng.fxmall.goods.controller.GoodsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Goods</servlet-name>
+    <url-pattern>/goods.do</url-pattern>
+  </servlet-mapping>
 </web-app>
