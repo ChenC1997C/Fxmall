@@ -8,12 +8,12 @@ import org.apache.ibatis.session.SqlSession;
 
 public class GoodsSkuDAOImpl implements IGoodsSkuDAO {
 
-    SqlSession sqlSession = MyBatisSessionFactoryBean.getSession();
-    IGoodsSkuMapper goodsSkuMapper = sqlSession.getMapper(IGoodsSkuMapper.class);
-
-    @Override
+//    SqlSession sqlSession = MyBatisSessionFactoryBean.getSession();
+//    IGoodsSkuMapper goodsSkuMapper = sqlSession.getMapper(IGoodsSkuMapper.class);
+//
+//    @Override
     public void insertGoodsSku(WxbGoodSku wxbGoodSku) {
-        goodsSkuMapper.insertGoodsSku(wxbGoodSku);
-        sqlSession.commit();
+//        goodsSkuMapper.insertGoodsSku(wxbGoodSku);
+//        sqlSession.commit();
     }
 }

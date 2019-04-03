@@ -9,6 +9,7 @@ import org.apache.commons.fileupload.FileItemIterator;
 import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.fileupload.util.Streams;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,10 +19,9 @@ import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-
 public class GoodsServlet extends BaseServlet {
-
-    private IGoodsService goodsService = new GoodsServiceImpl();
+    final ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
+    IGoodsService goodsService=applicationContext.getBean(GoodsServiceImpl.class);
 
     /**
      *  商品页面分页显示商品信息
@@ -228,4 +228,5 @@ public class GoodsServlet extends BaseServlet {
         }
 
     }
+
 }

@@ -7,6 +7,7 @@ import com.qianfeng.fxmall.goods.service.IGoodsSkuService;
 import com.qianfeng.fxmall.goods.service.Impl.GoodsServiceImpl;
 import com.qianfeng.fxmall.goods.service.Impl.GoodsSkuServiceImpl;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -15,13 +16,22 @@ import java.util.List;
 
 public class Test {
     public static void main(String[] args){
+        final ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
+        GoodsServiceImpl service=applicationContext.getBean(GoodsServiceImpl.class);
+
+            List<WxbGood> goods=service.queryGoodsByPage(1);
+            for(WxbGood good:goods){
+                System.out.println(good.getGoodName());
+            }
+
+
 //        SqlSession session = MyBatisSessionFactoryBean.getSession();
-        IGoodsSkuService goodsSkuService=new GoodsSkuServiceImpl();
+//        IGoodsSkuService goodsSkuService=new GoodsSkuServiceImpl();
 //
-            WxbGoodSku wxbGoodSku=new WxbGoodSku("aqw```sss","aaaa","aaaa","123","asdad","32e51f09",1,"aaa,");
+//            WxbGoodSku wxbGoodSku=new WxbGoodSku("aqw```sss","aaaa","aaaa","123","asdad","32e51f09",1,"aaa,");
 //        SqlSession session=MyBatisSessionFactoryBean.getSession();
 //        session.insert("com.qianfeng.fxmall.goods.bean.WxbGoodSkuMapper.insertGoodsSku",wxbGoodSku);
-        goodsSkuService.insertGoodsSku(wxbGoodSku);
+//        goodsSkuService.insertGoodsSku(wxbGoodSku);
 //        Date date=new Date();
 //        Timestamp timestamp = new Timestamp(date.getTime());
 //        WxbGood wxbGood=new WxbGood("1111","123","123","123","123","123","123","123","123","123","123","123","123","123",1,"123","123",1,timestamp,11,22,timestamp,timestamp,"123","123",123,"123",111,111,111,"222");

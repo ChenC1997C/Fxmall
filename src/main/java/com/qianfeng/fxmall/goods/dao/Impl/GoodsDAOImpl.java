@@ -1,31 +1,28 @@
 package com.qianfeng.fxmall.goods.dao.Impl;
 
 import com.qianfeng.fxmall.commons.info.SystemConstantsUtils;
-import com.qianfeng.fxmall.commons.mybatis.MyBatisSessionFactoryBean;
 import com.qianfeng.fxmall.goods.bean.WxbGood;
 import com.qianfeng.fxmall.goods.dao.IGoodsDAO;
 import com.qianfeng.fxmall.goods.mapper.WxbGoodMapper;
-import org.apache.ibatis.session.SqlSession;
-import java.io.IOException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
 /**
  * MyBatis 商品数据访问层
  */
+@Component
 public class GoodsDAOImpl implements IGoodsDAO {
-
+    @Autowired
+    private WxbGoodMapper wxbGoodMapper;
     @Override
     public List<WxbGood> queryGoodsByPage(Integer index) {
-        SqlSession session= MyBatisSessionFactoryBean.getSession();
-        WxbGoodMapper goodMapper = session.getMapper(WxbGoodMapper.class);
-        List<WxbGood> wxbGoods = goodMapper.queryGoodsByPage(index,SystemConstantsUtils.Page.Page_SIZE);
-        return wxbGoods;
+        return wxbGoodMapper.queryGoodsByPage(index,SystemConstantsUtils.Page.Page_SIZE);
     }
 
     @Override
     public void insertOneGood(WxbGood wxbGood) {
-        SqlSession session= MyBatisSessionFactoryBean.getSession();
-        session.getMapper(WxbGoodMapper.class).insertOneGood(wxbGood);
-        session.commit();
+        wxbGoodMapper.insertOneGood(wxbGood);
     }
 }
